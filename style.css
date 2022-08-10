@@ -1,12 +1,12 @@
 body {
   text-align: center;
+  background-image: url('./images/df8i37y-c9ffef68-8c36-40fe-8be4-1f331268dcea.jpg');
 }
 
 div {
   border: 1px black solid;
   width: 40px;
   height: 40px;
-  display: inline-table;
 }
 
 .pixel {
@@ -40,12 +40,16 @@ div {
 #pixel-board {
   padding: 0;
   line-height: 0;
-  display: inline-table;
-  width: 210px;
-  height: 210px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
 }
 
 #buttons {
   text-align: center;
   margin-bottom: 20px;
+}
+
+#new-board-length {
+  margin-top: 20px;
 }

@@ -1,11 +1,10 @@
+const divTable = document.getElementById('pixel-board');
+
 window.onload = function creatPixels() {
-  for (let index = 0; index < 5; index += 1) {
-    for (let index2 = 0; index2 < 5; index2 += 1) {
-      const newDiv = document.createElement('div');
-      newDiv.setAttribute('class', 'pixel');
-      const divTable = document.getElementById('pixel-board');
-      divTable.appendChild(newDiv);
-    }
+  for (let index = 0; index < 25; index += 1) {
+    const newDiv = document.createElement('div');
+    newDiv.setAttribute('class', 'pixel');
+    divTable.appendChild(newDiv);
   }
 };
 
@@ -45,3 +44,18 @@ function cleaner() {
 
 const boardCleaner = document.getElementById('clear-board');
 boardCleaner.addEventListener('click', cleaner);
+
+function generateNewBoard() {
+  const deleteBoard = document.getElementById('pixel-board');
+  deleteBoard.innerText = '';
+  const newBoardInput = document.querySelector('#board-size');
+  const newBoardValue = newBoardInput.value;
+  for (let index = 0; index < (newBoardValue * newBoardValue); index += 1) {
+    const newDiv = document.createElement('div');
+    newDiv.setAttribute('class', 'pixel');
+    divTable.appendChild(newDiv);
+  }
+}
+
+const buttonVQV = document.getElementById('generate-board');
+buttonVQV.addEventListener('click', generateNewBoard);
